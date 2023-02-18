@@ -2,12 +2,23 @@
 
 ## Notices
 
-- **2021-12-13** `hide_inactive_statusline` option is deprecated for lualine.
-  That means it does not force the underline style to `StatusLineNC` highlight. #148
+<!-- If you're interested, you can learn more about "sponsor-spotlight" on
+ https://dev.to/ful1e5/lets-give-recognition-to-those-supporting-our-work-on-github-sponsors-b00 -->
 
-## Changelog
+![shoutout-sponsors](https://sponsor-spotlight.vercel.app/sponsor?login=ful1e5)
 
-See [CHANGELOG.md](CHANGELOG.md)
+> **Note**
+> All features and bug fixes are on hold while we focus on a refactor of the theme.
+> If you would like to be involved in the
+> [discussion](https://github.com/projekt0n/github-nvim-theme/discussions/226)
+> or have input to share, please join us as soon as possible. Thank you for your understanding.
+
+Subscribe to this [discussion](https://github.com/projekt0n/github-nvim-theme/discussions/198)
+or `:h github-theme-changelog` to receive updates on breaking changes and deprecations.
+
+- **2022-08-03**: Terminal and other themes have been moved to
+  **[github-theme-contrib](https://github.com/projekt0n/github-theme-contrib)**
+  git repository and related code have been removed from this repository.
 
 ## Requirements
 
@@ -15,32 +26,31 @@ See [CHANGELOG.md](CHANGELOG.md)
 
 ## Installation
 
+> **Warning**
+> Use the latest release [tag](https://github.com/projekt0n/github-nvim-theme/releases/tag/v0.0.7) or
+> [0.0.x](https://github.com/projekt0n/github-nvim-theme/tree/0.0.x) branch for updates, not the main branch.
+
 Install the theme with your preferred package manager:
 
 Install with [vim-plug](https://github.com/junegunn/vim-plug):
 
 ```vim
-Plug 'projekt0n/github-nvim-theme'
+Plug 'projekt0n/github-nvim-theme', { 'tag': 'v0.0.7' }
+" or                                { 'branch': '0.0.x' }
 ```
 
 Or with [dein](https://github.com/Shougo/dein.vim):
 
 ```vim
-call dein#add('projekt0n/github-nvim-theme')
+call dein#add('projekt0n/github-nvim-theme', { 'rev': 'v0.0.7' })
+" or                                         { 'rev': '0.0.x' }
 ```
 
 Or with [minpac](https://github.com/k-takata/minpac):
 
 ```vim
-call minpac#add('projekt0n/github-nvim-theme')
-```
-
-Or with [Vundle](https://github.com/vundlevim/vundle.vim):
-
-Place this in your `.vimrc` or `init.vim`,
-
-```vim
-Plugin 'projekt0n/github-nvim-theme'
+call minpac#add('projekt0n/github-nvim-theme', { 'rev': 'v0.0.7' })
+" or                                           { 'rev': '0.0.x' }
 ```
 
 Or with [Packer.nvim](https://github.com/wbthomason/packer.nvim):
@@ -49,11 +59,13 @@ Add this in your `init.lua` or `plugins.lua`
 
 ```lua
 -- Install without configuration
-use ({ 'projekt0n/github-nvim-theme' })
+use ({ 'projekt0n/github-nvim-theme', tag = 'v0.0.7' })
+-- or                                 branch = '0.0.x'
 
 -- Or with configuration
 use({
-  'projekt0n/github-nvim-theme',
+  'projekt0n/github-nvim-theme', tag = 'v0.0.7',
+-- or                            branch = '0.0.x'
   config = function()
     require('github-theme').setup({
       -- ...
@@ -145,14 +157,6 @@ require("github-theme").setup({
 - Vim terminal colors
 - Darker background for sidebar-like windows
 - Most elegant lualine theme
-- Color configs for [Alacritty](https://github.com/alacritty/alacritty),
-  [Foot](https://codeberg.org/dnkl/foot),
-  [Konsole](https://konsole.kde.org/),
-  [Windows Terminal](https://github.com/microsoft/terminal),
-  [Xresources](https://wiki.archlinux.org/title/x_resources),
-  [iTerm2](https://iterm2.com/),
-  [kitty](https://sw.kovidgoyal.net/kitty/conf.html?highlight=include), and
-  [tmux](https://github.com/tmux/tmux/wiki)
 - Plugin Support
   [Builtin lsp diagnostics](https://neovim.io/doc/user/lsp.html),
   [ale](https://github.com/dense-analysis/ale),
@@ -185,20 +189,8 @@ Installation docs and screenshots at [LUALINE.md](./LUALINE.md).
 
 ## Terminal Themes
 
-> To generate the configs `make terminal` or `:luafile lua/github-theme/terminal/init.lua`
-
-Extra color configs for **Alacritty**, **Foot**, **Konsole**, **Windows Terminal**, **Xresources**, **iTerm**,
-**kitty**, and **tmux** can be found in [terminal](terminal/) directory. To use them, refer to their respective
-documentation.
-
-- Alacritty - [terminal/alacritty](./terminal/alacritty)
-- Foot - [terminal/foot](./terminal/foot)
-- Konsole - [terminal/konsole](./terminal/konsole)
-- Windows Terminal - [terminal/windows_terminal](./terminal/windows_terminal)
-- Xresources - [terminal/xresources](./terminal/xresources)
-- iTerm - [terminal/iterm](./terminal/iterm)
-- kitty - [terminal/kitty](./terminal/kitty)
-- tmux - [terminal/tmux](./terminal/tmux)
+Moved to **[projekt0n/github-theme-contrib](https://github.com/projekt0n/github-theme-contrib)**
+git repository
 
 ### Making `undercurls` work properly in **Tmux**
 
@@ -420,8 +412,10 @@ require("github-theme").setup({
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md)
+See [CONTRIBUTING.md](./CONTRIBUTING.md)
 
-## License
+## Copying
 
-This project licensed under `MIT` License.
+This project is released under the terms of the MIT license.
+See [LICENCE](./LICENSE) for more information or see
+[opensource.org](https://opensource.org/licenses/MIT)
